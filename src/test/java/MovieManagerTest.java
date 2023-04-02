@@ -5,7 +5,7 @@ import ru.netology.javaqa.MovieManager;
 public class MovieManagerTest {
 
     @Test
-    public void shouldAddMovie () {
+    public void shouldAddMovie() {
         MovieManager manager = new MovieManager();
 
         manager.addMovie("Movie one");
@@ -16,8 +16,9 @@ public class MovieManagerTest {
         String[] actual = manager.findAll();
         Assertions.assertArrayEquals(expected, actual);
     }
+
     @Test
-    public void shouldFindAll () {
+    public void shouldFindAll() {
         MovieManager manager = new MovieManager();
 
         manager.addMovie("Movie one");
@@ -33,19 +34,20 @@ public class MovieManagerTest {
         String[] actual = manager.findLast(7);
         Assertions.assertArrayEquals(expected, actual);
     }
-@Test
+
+    @Test
     public void shouldFindLast() {
-    MovieManager manager = new MovieManager(5);
+        MovieManager manager = new MovieManager(5);
 
-    manager.addMovie("Movie one");
-    manager.addMovie("Movie two");
-    manager.addMovie("Movie three");
+        manager.addMovie("Movie one");
+        manager.addMovie("Movie two");
+        manager.addMovie("Movie three");
 
-    manager.findLast(5);
+        manager.findLast(5);
 
-    String[] expected = {"Movie three", "Movie two", "Movie one"};
-    String[] actual = manager.findLast(5);
-    Assertions.assertArrayEquals(expected, actual);
+        String[] expected = {"Movie three", "Movie two", "Movie one"};
+        String[] actual = manager.findLast(5);
+        Assertions.assertArrayEquals(expected, actual);
 
     }
 
