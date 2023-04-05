@@ -4,6 +4,7 @@ import ru.netology.javaqa.MovieManager;
 
 public class MovieManagerTest {
     MovieManager manager = new MovieManager();
+
     @Test
     public void shouldAddMoviesBelowLimit() {
 
@@ -29,6 +30,7 @@ public class MovieManagerTest {
         String[] actual = manager.findAll();
         Assertions.assertArrayEquals(expected, actual);
     }
+
     @Test
     public void shouldAddMoviesOverLimit() {
         manager.addMovie("Movie one");
@@ -57,6 +59,7 @@ public class MovieManagerTest {
         String[] actual = manager.findLast();
         Assertions.assertArrayEquals(expected, actual);
     }
+
     @Test
     public void shouldFindMoviesBelowLimitReverseOrder() {
 
@@ -69,6 +72,7 @@ public class MovieManagerTest {
         String[] actual = manager.findLast();
         Assertions.assertArrayEquals(expected, actual);
     }
+
     @Test
     public void shouldFindMoviesOverLimitReverseOrder() {
 
@@ -79,7 +83,7 @@ public class MovieManagerTest {
         manager.addMovie("Movie five");
         manager.addMovie("Movie six");
 
-        String[] expected = {"Movie six","Movie five", "Movie four", "Movie three", "Movie two"};
+        String[] expected = {"Movie six", "Movie five", "Movie four", "Movie three", "Movie two"};
         String[] actual = manager.findLast();
         Assertions.assertArrayEquals(expected, actual);
     }
@@ -99,6 +103,7 @@ public class MovieManagerTest {
         Assertions.assertArrayEquals(expected, actual);
 
     }
+
     @Test
     public void shouldFindMoviesSetBelowLimitReverseOrder() {
         MovieManager manager = new MovieManager(5);
@@ -113,6 +118,7 @@ public class MovieManagerTest {
         Assertions.assertArrayEquals(expected, actual);
 
     }
+
     @Test
     public void shouldFindMoviesSetOverLimitReverseOrder() {
         MovieManager manager = new MovieManager(5);
